@@ -4,6 +4,7 @@ import os
 import tensorflow as tf
 import numpy as np
 import cv2
+import time 
 
 # module-level variables ##############################################################################################
 RETRAINED_LABELS_TXT_FILE_LOC = os.getcwd() + "/" + "retrained_labels.txt"
@@ -111,7 +112,7 @@ def main():
                     # write the result on the image
                     writeResultOnImage(openCVImage, strClassification + ", " + "{0:.2f}".format(scoreAsAPercent) + "% confidence")
                     # finally we can show the OpenCV image
-                    cv2.imshow(fileName, openCVImage)
+                   ## cv2.imshow(fileName, openCVImage)
                     # mark that we've show the most likely prediction at this point so the additional information in
                     # this if statement does not show again for this image
                     onMostLikelyPrediction = False
@@ -122,7 +123,8 @@ def main():
             # end for
 
             # pause until a key is pressed so the user can see the current image (shown above) and the prediction info
-            cv2.waitKey()
+            # cv2.waitKey()
+            time.sleep(1)
             # after a key is pressed, close the current window to prep for the next time around
             cv2.destroyAllWindows()
         # end for
