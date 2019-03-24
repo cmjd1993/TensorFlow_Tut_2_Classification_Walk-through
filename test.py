@@ -61,6 +61,7 @@ def main():
             # end if
 
             # show the file name on std out
+	    print(" ")
             print(fileName)
 
             # get the file name and full path of the current image file
